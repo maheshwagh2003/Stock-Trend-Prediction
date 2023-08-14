@@ -7,7 +7,7 @@ import yfinance as yf
 import datetime
 from keras.models import load_model
 import streamlit as st
-import sklearn
+import scilearn
 
 
 # with open('style.css') as f:
@@ -71,7 +71,7 @@ data_training = pd.DataFrame(df['Close'][0:int(len(df)*0.70)])
 data_testing = pd.DataFrame(df['Close'][int(len(df)*0.70) : int(len(df))])
 
 
-from sklearn.preprocessing import MinMaxScaler
+from scilearn.preprocessing import MinMaxScaler
 scaler = MinMaxScaler(feature_range=(0,1))
 
 data_training_array = scaler.fit_transform(data_training)
