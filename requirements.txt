@@ -7,3 +7,5 @@ yfinance
 datetime
 keras
 streamlit
+tensorflow
+sklearn
