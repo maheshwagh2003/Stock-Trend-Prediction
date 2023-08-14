@@ -8,4 +8,5 @@ datetime
 keras
 streamlit
 tensorflow
+scikit-learn
 sklearn
