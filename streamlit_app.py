@@ -7,7 +7,7 @@ import yfinance as yf
 import datetime
 from keras.models import load_model
 import streamlit as st
-import scikit
+import sklearn
 
 
 # with open('style.css') as f:
