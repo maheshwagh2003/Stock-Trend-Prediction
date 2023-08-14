@@ -1,0 +1,9 @@
+numpy
+pandas
+matplotlib.pyplot
+pandas_datareader
+pandas_datareader
+yfinance
+datetime
+from keras.models import load_model
+streamlit
