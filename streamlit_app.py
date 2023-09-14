@@ -19,7 +19,7 @@ date = x.strftime("%Y-%m-%d")
 
 
 st.title('Stock Trend Prediction')
-st.subheader('-Mahesh Wagh')
+st.subheader('-Abhishek Mahadik, Mahesh Wagh, Avin Walunj')
 
 user_input = st.text_input('Enter Stock Ticker', 'TSLA')
 
