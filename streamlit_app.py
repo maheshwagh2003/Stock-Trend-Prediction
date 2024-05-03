@@ -8,10 +8,10 @@ import datetime
 from keras.models import load_model
 import streamlit as st
 import sklearn
+import plotly.express as px
+import plotly.figure_factory as ff
 
 
-# with open('style.css') as f:
-#     st.markdown(f'<style>{f.read()}</style>',unsafe_allow_html=True)
 start = '2010-01-01'
 
 x = datetime.datetime.now()
@@ -19,10 +19,7 @@ date = x.strftime("%Y-%m-%d")
 
 
 st.title('Stock Trend Prediction')
-st.subheader('Mahesh Wagh')
-
-#link = 'To Predict Stock Prices: <a href="https://stock-price-predictor-maheshwagh.streamlit.app/" target="_blank">Click Here</a>'
-#st.markdown(link, unsafe_allow_html=True)
+st.subheader('-Mahesh Wagh')
 
 user_input = st.text_input('Enter Stock Ticker', 'TSLA')
 
@@ -42,31 +39,33 @@ st.write(df.describe())
 #Visualizations
 
 st.subheader('Closing Price vs Time Chart')
-fig = plt.figure(figsize=(12,6))
-plt.plot(df.Close)
-st.pyplot(fig)
+fig = px.scatter(df.Close)
+st.plotly_chart(fig, use_container_width=True)
+
 
 st.subheader('Closing Price vs Time Chart with 100 Moving Average')
 ma100 = df.Close.rolling(100).mean()
-fig = plt.figure(figsize=(12,6))
-plt.plot(ma100)
-st.pyplot(fig)
+#fig = plt.figure(figsize=(12,6))
+fig = px.scatter(ma100)
+st.plotly_chart(fig)
 
 st.subheader('Closing Price vs Time Chart with 200 Moving Average')
 ma200 = df.Close.rolling(200).mean()
-fig = plt.figure(figsize=(12,6))
-plt.plot(ma200)
-st.pyplot(fig)
+#fig = plt.figure(figsize=(12,6))
+fig = px.scatter(ma200)
+st.plotly_chart(fig)
 
-st.subheader('Closing Price vs Time Chart with 100 and 200 Moving Average')
-ma200 = df.Close.rolling(100).mean()
-ma200 = df.Close.rolling(200).mean()
-fig = plt.figure(figsize=(12,6))
-plt.plot(ma100, 'r', label='Moving Avg 100 days')
-plt.plot(ma200, 'g', label='Moving Avg 200 days')
-plt.plot(df.Close, 'b', label='Closing Price')
-plt.legend()
-st.pyplot(fig)
+# st.subheader('Closing Price vs Time Chart with 100 and 200 Moving Average')
+# ma100 = df.Close.rolling(100).mean()
+# ma200 = df.Close.rolling(200).mean()
+
+# fig = px.scatter([ma100,ma200,df.Close])
+
+# # px.scatter(ma100)
+# # px.scatter(ma200)
+# # px.scatter(df.Close)
+# # plt.legend()
+# st.plotly_chart(fig, theme="streamlit")
 
 #Splitting Data into Training and Testing
 
@@ -123,6 +122,9 @@ plt.xlabel('Time')
 plt.ylabel('Price')
 plt.legend()
 st.pyplot(fig2)
+
+
+
 
 
 
