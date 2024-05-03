@@ -32,7 +32,7 @@ df = data.reset_index()
 
 
 #Describing Data
-st.subheader('Data From 2010 - 2023')
+st.subheader('Data From 2010 - 2024')
 st.write(df.describe())
 
 
