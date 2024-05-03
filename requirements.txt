@@ -9,3 +9,4 @@ keras
 streamlit
 tensorflow
 scikit-learn
+plotly
