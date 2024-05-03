@@ -22,7 +22,7 @@ st.title('Stock Trend Prediction')
 st.subheader('Mahesh Wagh')
 
 #link = 'To Predict Stock Prices: <a href="https://stock-price-predictor-maheshwagh.streamlit.app/" target="_blank">Click Here</a>'
-st.markdown(link, unsafe_allow_html=True)
+#st.markdown(link, unsafe_allow_html=True)
 
 user_input = st.text_input('Enter Stock Ticker', 'TSLA')
 
